@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.0.final using JasperReports Library version 6.19.0-646c68931cebf1a58bc65c4359d1f0ca223c5e94  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Sellings" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1d0d297c-0433-4c8e-a93a-19410912854c">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[IlBST0RVQ1QiIEFTICwxMjQsNzAsMTk5ZGY3MTYtMTgzZi00NmM4LTk0ZjMtYzgxMWFjNjJhOTBh
+Ow==]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="dbproject"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT "P_NAME",
+	"P_ID",
+	"NUMBEROFORDERS"
+FROM "PRODUCT"]]>
+	</queryString>
+	<field name="P_NAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="P_NAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="P_NAME"/>
+	</field>
+	<field name="P_ID" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="P_ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="P_ID"/>
+	</field>
+	<field name="NUMBEROFORDERS" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="NUMBEROFORDERS"/>
+		<property name="com.jaspersoft.studio.field.label" value="NUMBEROFORDERS"/>
+	</field>
+	<group name="P_ID">
+		<groupExpression><![CDATA[$F{P_ID}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<detail>
+		<band height="274" splitType="Stretch">
+			<barChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="74" width="560" height="200" uuid="5babfd4b-cbc3-4f40-9b38-e72472213477"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset resetType="Report"/>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{NUMBEROFORDERS}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{P_ID}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{NUMBEROFORDERS}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</detail>
+</jasperReport>
